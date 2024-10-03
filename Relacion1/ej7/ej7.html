@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej7</title>
+  </head>
+  <body>
+    <h2 onclick="seRecivir([1,2,3,4,5,6])">Pulsa</h2>
+    <script>
+      function seRecivir(lista) {
+        let miLista = [];
+        for (let i = 0; i < lista.length; i++) {
+            miLista[i]=lista[i];
+          for (let j = i; j > 0; j--) {            
+            miLista[i] += lista[j-1];
+          }
+        }
+        console.log(miLista);
+      }
+    </script>
+  </body>
+</html>
