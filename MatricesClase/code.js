@@ -25,28 +25,39 @@ function main() {
   let filiña = [];
   let mayor = -11111111;
   let suma = 0;
+  let n;
   for (let i = 0; i < tam; i++) {
     for (let j = 0; j < tam; j++) {
-      let n = parseInt(Math.random() * (tam + 2) + tam);
+      n = parseInt(Math.random() * (tam + 2) + tam);
 
       if (n > mayor) {
         mayor = n;
       }
       suma += n;
-      let str;
-      if (n >= 10) {
-        str = " " + n + " ";
-        filiña.push(str);
-      } else {
-        str = " 0" + n + " ";
-        filiña.push(str);
-      }
+      filiña.push(n);
+      
     }
     matriz.push(filiña);
     filiña = [];
   }
-  matriz;
-  for (let i = 0; i < matriz.length; i++) {
-    console.log(matriz[i]);
+  let matriz2 = matriz;
+  for (let i = 0; i < tam; i++) {
+    for (let j = 0; j < tam; j++) {
+      if (matriz[i][j] % 3 == 0 && matriz[i][j] % 5 == 0)
+        matriz2[i][j] = "FIZZ-BUZZ";
+      else if (matriz[i][j] % 3 == 0) matriz2[i][j] = "FIZZ";
+      else if (matriz[i][j] % 5 == 0) matriz2[i][j] = "BUZZ";
+      else{
+        if(matriz2[i][j] >=10)
+          matriz2[i][j] = " "+matriz[i][j]+" ";
+        else{
+          matriz2[i][j] = " 0"+matriz[i][j]+" ";
+        }
+      }
+    }
   }
+  for (let i = 0; i < matriz2.length; i++) {
+    console.log(matriz2[i]);
+  }
+  
 }
