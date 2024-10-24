@@ -5,8 +5,11 @@ window.onload = () =>{
     for (const element of dedos) {
         i = 0;
         element.onclick = function(){
-            this.style.backgroundColor = colors[i];
-            if(i<colors.length-1) i++;
+            
+            if(i < colors.length-1) {
+                this.style.backgroundColor = colors[i];
+                i++;
+            }
             else i=0;
         }    
     }
